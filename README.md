@@ -1,0 +1,120 @@
+# Effortless Resume Kit
+
+An LLM-driven, modular resume tailor designed to transform a static personal knowledge base into highly optimized, targeted resumes. Powered by the **Gemini CLI**, this tool decouples your career data from visual formatting, allowing you to generate custom resumes in either **LaTeX (`.tex`)** for pixel-perfect ATS PDFs or **Markdown (`.md`)** for universal web editing.
+
+This repository provides a structured framework to feed the Gemini agent your entire professional history so it can act as an expert technical recruiter, extracting and polishing only the most relevant impact metrics for any given job description.
+
+---
+
+## Key Features
+
+* **Headless Knowledge Base:** Store your career history, projects, and skills in modular Markdown. No more maintaining multiple resume versions.
+* **Agent-Driven Tailoring:** Uses specialized "skills" to analyze job descriptions and match them with your experience automatically.
+* **Dual Output Formats:** Supports LaTeX (`.tex`) for high-fidelity professional resumes and Markdown (`.md`) for quick sharing or editing in tools like Google Docs, Notion and Obsidian.
+* **Strict Provenance & Accuracy:** Built-in rules ensure the agent never hallucinates or exaggerates your experience, maintaining high integrity in every output.
+
+---
+
+## Project Structure
+
+```text
+.
+├── .agents/                      # Agent skill definitions and logic
+│   └── skills/make-resume/       # The core resume generation skill
+├── knowledge_base/               # Your static, immutable career data
+│   ├── 01_experience/            # Work history and detailed achievements
+│   ├── 02_projects/              # Personal and professional projects
+│   ├── 03_skills/                # Technical and soft skills taxonomy
+│   ├── 04_education/             # Degrees, certifications, and courses
+├── job_descriptions/             # Target vacancy text files (.txt)
+├── templates/                    # LaTeX and Markdown templates with placeholders
+├── built_resumes/                # Generated output files
+├── GEMINI.md                     # Global instructions for the Gemini agent
+└── config.md                     # Personal configuration and preferences
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/gemini-headless-resume.git
+cd gemini-headless-resume
+```
+
+### 2. Populate your Knowledge Base
+
+Fill out the files inside the `knowledge_base/` directory. Be as detailed as possible. The more raw "material" the agent has (especially quantitative metrics and specific technical stacks), the better it can tailor your outputs.
+
+> 💡 **Tip:** A sample dataset featuring **Fred Flintstone's** prehistoric career is included by default so you can test the pipeline immediately before entering your personal data.
+
+### 3. Add a Job Description
+
+Copy the text of the job description you are applying for and save it as a `.txt` file inside the `job_descriptions/` folder.
+
+### 4. Run the Generator
+
+Run the `/make-resume` skill and follow the agent's prompts to set your resume parameters
+
+Or ask the Gemini agent to generate a resume with custom instructions. For example:
+> "Make a resume for the regional-director.txt job description in Spanish."
+
+The agent will automatically:
+
+1. Analyze the job description for key requirements.
+2. Extract relevant evidence from your `knowledge_base`.
+3. Populate the selected template from the `templates/` folder.
+4. Save the result in `built_resumes/`.
+
+---
+
+## Workflow Automation
+
+The system follows a modular pipeline designed for precision:
+
+```text
+[Knowledge Base] + [Job Description] + [Config] 
+                         │
+                         ▼
+                [Gemini Agent Skill]
+             (Analyze -> Match -> Build)
+                         │
+        ┌────────────────┴────────────────┐
+        ▼                                 ▼
+   [.tex Output]                    [.md Output]
+  Ready for PDF compilation        Ready for a Google Docs template
+```
+
+### PDF file generation
+
+#### For generated Markdown files (Google Docs)
+
+Make sure Markdown is enabled in Google Docs (Tools > Preferences). Copy and paste the generated resume text into your document. The headers, bolding, and lists will format instantly matching the styles defined in your Google Doc template. Finally, export the Google Doc as a PDF.
+
+#### For generated LaTeX files
+
+If you generate a `.tex` file, you can compile it locally using `latexmk` or upload it to [Overleaf](https://www.overleaf.com/):
+
+```bash
+latexmk -pdf built_resumes/my_resume.tex
+```
+
+---
+
+## Customization
+
+### Template Selection
+
+You can set your personal preferences (like page count and bullet styles) in the `config.md` file.
+
+### Global Rules
+
+The `GEMINI.md` file contains the core logic and constraints for the agent (e.g., "Accuracy > Relevance > Impact"). Do not edit this file unless you want to change the fundamental behavior of the generator.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).

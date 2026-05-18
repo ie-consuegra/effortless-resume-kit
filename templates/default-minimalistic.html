@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Friendly Resume Template</title>
+    <style>
+        /* 
+           CUSTOMIZATION VARIABLES
+           Apply your preferred colors and fonts here.
+        */
+        :root {
+            /* Colors */
+            --primary-text-color: #000000;
+            /* Color for main headings and titles */
+            --primary-bg-color: #ffffff;
+            /* Background color for headings (if any) */
+            --secondary-text-color: #444444;
+            /* Color for subheadings/dates */
+            --body-text-color: #333333;
+            /* General text color */
+            --accent-border-color: #000000;
+            /* Color for divider lines */
+
+            /* Fonts */
+            --font-family-main: 'Arial', sans-serif;
+            /* Standard font for body text */
+            --font-family-headers: 'Arial', sans-serif;
+            /* Font for headings */
+
+            /* Sizing */
+            --base-font-size: 11pt;
+            --header-font-size: 16pt;
+            --section-font-size: 13pt;
+            --line-height: 1.4;
+        }
+
+        /* Basic Reset & Page Setup */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: var(--font-family-main);
+            font-size: var(--base-font-size);
+            color: var(--body-text-color);
+            line-height: var(--line-height);
+            background-color: #f0f0f0;
+            /* Light gray for browser previewing */
+        }
+
+        /* Resume Container - A4-like constraint for preview */
+        .resume-page {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 0.5in 0.75in;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-family: var(--font-family-headers);
+            font-size: var(--header-font-size);
+            color: var(--primary-text-color);
+            background-color: var(--primary-bg-color);
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            margin-top: 5px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-family: var(--font-family-headers);
+            font-size: var(--section-font-size);
+            color: var(--primary-text-color);
+            background-color: var(--primary-bg-color);
+            border-bottom: 2px solid var(--accent-border-color);
+            margin: 15px 0 10px 0;
+            padding-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 12px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--primary-text-color);
+        }
+
+        .item-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: var(--secondary-text-color);
+            margin-bottom: 4px;
+        }
+
+        /* List Styles */
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        /* Skills Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            margin-bottom: 5px;
+        }
+
+        .skill-category strong {
+            color: var(--primary-text-color);
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .resume-page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-page">
+        <!-- Header -->
+        <header class="header">
+            <h1>[Full Name][Degree suffix]</h1>
+            <div class="contact-info">
+                [Location] | [Phone Number] | [Email Address]
+                <br>
+                [LinkedIn URL] | [Portfolio/GitHub URL]
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>[Enter a concise 3-4 sentence summary of your professional background, key strengths, and career goals.
+                Highlight your most significant achievements and years of experience relevant to the target role.]</p>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>[Job Title]</span>
+                    <span>[Start Date] – [End Date]</span>
+                </div>
+                <div class="item-subheader">
+                    <span>[Company Name]</span>
+                    <span>[City, State]</span>
+                </div>
+                <ul>
+                    <li>[Accomplishment bullet point: Start with a strong action verb and quantify results where
+                        possible.]</li>
+                    <li>[Accomplishment bullet point: Describe a complex problem you solved and the specific
+                        tools/technologies used.]</li>
+                    <li>[Accomplishment bullet point: Highlight leadership, collaboration, or process improvements.]
+                    </li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>[Previous Job Title]</span>
+                    <span>[Start Date] – [End Date]</span>
+                </div>
+                <div class="item-subheader">
+                    <span>[Previous Company Name]</span>
+                    <span>[City, State]</span>
+                </div>
+                <ul>
+                    <li>[Key responsibility or achievement related to the target position.]</li>
+                    <li>[Quantifiable impact, such as percentage improvement or time saved.]</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>[Degree Name]</span>
+                    <span>[Graduation Date]</span>
+                </div>
+                <div class="item-subheader">
+                    <span>[University Name]</span>
+                    <span>[City, State]</span>
+                </div>
+                <p>[Optional: Minor, GPA, Academic Honors, or relevant Coursework]</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <strong>[Category 1]:</strong> [Skill A], [Skill B], [Skill C], [Skill D]
+                </div>
+                <div class="skill-category">
+                    <strong>[Category 2]:</strong> [Skill E], [Skill F], [Skill G]
+                </div>
+                <div class="skill-category">
+                    <strong>[Category 3]:</strong> [Skill H], [Skill I], [Skill J]
+                </div>
+                <div class="skill-category">
+                    <strong>[Category 4]:</strong> [Skill K], [Skill L]
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects (Optional) -->
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>[Project Title]</span>
+                    <span>[Date]</span>
+                </div>
+                <ul>
+                    <li>[Developed a X using Y, resulting in Z.]</li>
+                    <li>[Briefly describe your role and the technologies employed.]</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
