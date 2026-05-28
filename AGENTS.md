@@ -1,6 +1,6 @@
-# resume-kit — Project Instructions
+# effortless-resume-kit — Project Instructions
 
-> This file is auto-loaded by the agent tool. It provides project-wide rules for all skills.
+> This file is auto-loaded by the agent. It provides project-wide rules for all skills.
 > **NEVER EDIT THIS FILE.** `AGENTS.md` is a read-only system file. Do not write session state, user data, job titles, company names, or any runtime content here. All mutable state belongs in `config.md`.
 
 ---
