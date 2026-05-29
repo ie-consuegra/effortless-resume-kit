@@ -1,10 +1,8 @@
 # Configuration
 
-> Edit this file and rename to `config.md`.
+## Global Configuration (Applied to all skills)
 
----
-
-## Identity / Contact information
+### Identity / Contact information
 
 Write the values (in the links section write the URLs without the https:// protocol, just write the domain name with the path) or leave blank.
 
@@ -20,7 +18,11 @@ Write the values (in the links section write the URLs without the https:// proto
 **Portfolio**:
 **Behance**:
 
-## Résumé Summary Template
+---
+
+## `make-resume` Skill Customizations
+
+### Résumé Summary Template
 
 Write a professional summary of the user, based on the data in the `knowledge_base` folder and the job description in the `job-descriptions` folder. The summary should be tailored to the job description.
 The template is a suggestion, the agent can modify it if needed, the final summary should be as follows (it contains further instructions enclosed in square brackets [] that must be followed while generating the summary):
@@ -28,7 +30,7 @@ The template is a suggestion, the agent can modify it if needed, the final summa
 [Domain] professional with [N]+ years combining [primary method] and [secondary method] for [application domain].
 [1-2 sentences on key accomplishments tailored to the job description]. [Metrics: publications, citations, awards if applicable].
 
-## Document Preferences
+### Document Preferences
 
 - **Resume pages:** 2
 - **Resume bullet variant:** 2L (all variable bullets are 2-line)
@@ -37,7 +39,7 @@ The template is a suggestion, the agent can modify it if needed, the final summa
 
 ---
 
-## Provenance Flags
+### Provenance Flags
 
 Track the publication status of your work. Skills check this table before every output.
 
@@ -50,7 +52,7 @@ Add your own rows. Delete the examples.
 
 ---
 
-## KB Corrections Log
+### KB Corrections Log
 
 Verified errors to never re-introduce. Add entries as you catch mistakes.
 
@@ -60,7 +62,7 @@ Verified errors to never re-introduce. Add entries as you catch mistakes.
 
 ---
 
-## Role Types
+### Role Types
 
 Define the role types you're targeting. Each gets a bundle during setup.
 
@@ -73,7 +75,7 @@ Define the role types you're targeting. Each gets a bundle during setup.
 
 ---
 
-## Role-Type Decision Tree
+### Role-Type Decision Tree
 
 Customize this to map Job descriptions keywords to your role types.
 
@@ -83,7 +85,7 @@ Customize this to map Job descriptions keywords to your role types.
 
 ---
 
-## FIXED Sections
+### FIXED Sections
 
 List template sections that should NEVER be modified during generation.
 These are copied verbatim from your template every time.
@@ -96,7 +98,29 @@ These are copied verbatim from your template every time.
 
 ---
 
-## Output Rules
+### Output Rules
 
 - **Email in all outputs:** [same as Personal Info email]
 - **Resume package:** [N] pages + 1-page cover letter
+
+---
+
+## `make-linkedIn` Skill Customizations
+
+**Target Expertise & Focus**:
+
+- Target Roles: Heavy Equipment Operator, Quarry Operations Supervisor, Industrial Site Foreman.
+
+- Professional Branding: A dedicated, hands-on specialist with over 20 years of uninterrupted experience in raw material extraction and mega-fauna steering.
+
+- Key Value Proposition: "Maximizing bedrock excavation throughput while maintaining zero-incident safety records with unpredictable biological machinery."
+
+**Keywords**: Bronto-Crane Operator, Quarry Supervisor, Heavy Equipment
+**Output language(s)**: English
+
+### Tone & Style Preferences
+
+**Tone**: Conversational, first person narrative ("I am", "I do", "I did").
+**Emoji use**: Use professional emojis sparingly in the 'About' section (e.g., 🚀, 💼) to break up text sections. | Do not use emojis in the output.
+
+---
